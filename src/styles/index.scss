@@ -1,0 +1,795 @@
+$Marineblue: hsl(213, 96%, 18%);
+$Purplishblue: hsl(267, 100%, 62%);
+$Pastelblue: hsl(228, 100%, 84%);
+$Lightblue: hsl(206, 94%, 87%);
+$Strawberryred: hsl(354, 84%, 57%);
+
+$Coolgray: hsl(231, 11%, 63%);
+$Lightgray: hsl(229, 24%, 87%);
+$Magnolia: hsl(217, 100%, 97%);
+$Alabaster: hsl(231, 100%, 99%);
+$White: hsl(0, 0%, 100%);
+@font-face{
+    font-family: 'Ubuntu-Bold';
+    src: url(../assets/fonts/Ubuntu-Bold.ttf);
+}
+@font-face{
+    font-family: 'Ubuntu-Medium';
+    src: url(../assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face{
+    font-family: 'Ubuntu-Regular';
+    src: url(../assets/fonts/Ubuntu-Regular.ttf);
+}
+@import "./breakpoints.scss";
+@mixin mobilePage{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -112px;
+    background-color: white;
+
+    padding: 25px;
+    width: 344px;
+    border-radius: 1em; 
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
+    @include desktop{
+        font-size: 20px;
+        width: 550px;
+        bottom: 790px;
+        left: 330px;
+        margin: 0;
+        -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.5);
+    }
+}
+html{
+    box-sizing: border-box;
+    font-size: 16px;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include desktop{
+        background-color: $Lightblue;
+    }
+}
+.form{
+    height: 100vh;
+    width: 375px;
+    background-color: $Lightblue;
+    @include desktop{
+        margin-top: 100px;
+        width: 940px;
+        height: 600px;
+        padding: 1em;
+        border-radius: 1em;
+        background-color: white;
+    }
+    .displayPageNum{
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        bottom: 150px;
+        display: flex;
+        justify-content: space-between;
+        width: 180px;
+        height: 35px;
+        div{
+            width: 35px;
+            height: 35px;
+            p{
+                font-family: 'Ubuntu-Medium';
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+                height: 35px;
+                padding: 0;
+                margin: 0;
+                border-radius: 999px;
+            }
+            @include desktop{
+                width: 100%;
+                height: 80px;
+                display: flex;
+                .step{
+                    font-size: .9em;
+                    display: block;
+                    height: 100%;
+                    width: 120px;
+                    text-align: start;
+                    margin-left: 2em;
+                    color: white;
+                    font-family: 'Ubuntu-Regular';
+                    span{
+                        display: block;
+                        width: 100%;
+                        font-family: 'Ubuntu-Bold';
+                    }
+                }
+            }
+        }
+        @include desktop{
+            margin-left: 0;
+            margin-right: 0;
+            width: 200px;
+            height: 220px;
+            bottom: 530px;
+            left: 35px;
+            flex-direction: column;
+        }
+    }
+    .Personal{
+        @include mobilePage;
+        height: 375px;
+
+        background-color: white;
+        .header{
+            font-family: 'Ubuntu-Bold';
+            font-size: 1.5em;
+            margin: 0;
+            margin-top: .5em;
+            color: $Marineblue;
+        }
+        p{
+            font-family: 'Ubuntu-Regular';
+            color: $Coolgray;
+            margin-top: .75em;
+            margin-bottom: 1em;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            font-family: "Ubuntu-Regular";
+            label{
+                width: 100%;
+                margin-top: .7em;
+                font-size: .75em;
+                font-family: "Ubuntu-Medium";
+                color: $Marineblue;
+                span{
+                    float: right; 
+                    color: red;
+                }
+            }
+            input{
+                &::placeholder{
+                    color: $Coolgray;
+                }
+                &:focus{
+                    outline: none;
+                    border-color: $Purplishblue;
+                }
+                margin-top: .1em;
+                margin-bottom: 1em;
+                border: 1px solid $Lightgray;
+                border-radius: .25em;
+                height: 38px;
+                padding: 1em;
+                color: $Marineblue;
+                font-family: "Ubuntu-Medium";
+            }
+        }
+    }
+    .Plan{
+        @include mobilePage;
+        height: 500px;
+        background-color: white;
+        @include desktop{
+            height: 375px;
+            form{
+                width: 90%;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .header{
+            font-family: 'Ubuntu-Bold';
+            font-size: 1.5em;
+            margin: 0;
+            margin-top: .5em;
+            color: $Marineblue;
+        }
+        p{
+            font-family: 'Ubuntu-Regular';
+            color: $Coolgray;
+            margin-top: .75em;
+            margin-bottom: 1em;
+        }
+        .Arcade{
+            &:hover{
+                cursor: pointer;
+                border-color: $Purplishblue;
+            }
+            width: 100%;
+            min-height: 75px;
+            padding: 17.5px;
+            text-align: start;
+            background-color: white;
+            border-radius: 1em;
+            border: 1px solid $Lightgray;
+
+            display: flex;
+
+            margin-top: 2em;
+            div{
+                height: 100%;
+                justify-content: flex-start;
+            }
+            svg{
+                margin-right: 17.5px;
+            }
+            p{
+                font-family: 'Ubuntu-Bold';
+                font-size: 1em;
+                margin: 0;
+                color: $Marineblue;
+            }
+            .arcCost{
+                margin-top: .25em;
+                font-family: 'Ubuntu-Regular';
+                color: $Coolgray;
+            }
+            span{
+                color: $Marineblue;
+                font-family: 'Ubuntu-Regular';
+            }
+            @include desktop{
+                margin-top: 1em;
+                width: 135px;
+                height: 160px;
+                flex-direction: column;
+                div{
+                    height: 50%;
+                    padding-top: 3em;
+                }
+                p{
+                    display: block;
+                }
+                span{
+                    display: block;
+                }
+            }
+        }
+        .Advanced{
+            &:hover{
+                cursor: pointer;
+                border-color: $Purplishblue;
+            }
+            width: 100%;
+            min-height: 75px;
+            padding: 17.5px;
+            text-align: start;
+            background-color: white;
+            border-radius: 1em;
+            border: 1px solid $Lightgray;
+
+            display: flex;
+
+            margin-top: 1em;
+            svg{
+                margin-right: 1em;
+            }
+            p{
+                font-family: 'Ubuntu-Bold';
+                font-size: 1em;
+                margin: 0;
+                color: $Marineblue;
+            }
+            .arcCost{
+                margin-top: .25em;
+                font-family: 'Ubuntu-Regular';
+                color: $Coolgray;
+            }
+            span{
+                color: $Marineblue;
+                font-family: 'Ubuntu-Regular';
+            }
+            @include desktop{
+                width: 135px;
+                height: 160px;
+                flex-direction: column;
+                div{
+                    height: 50%;
+                    padding-top: 3em;
+                }
+                p{
+                    display: block;
+                }
+                span{
+                    display: block;
+                }
+            }
+        }
+        .Pro{
+            &:hover{
+                cursor: pointer;
+                border-color: $Purplishblue;
+            }
+            width: 100%;
+            min-height: 75px;
+            padding: 17.5px;
+            text-align: start;
+            background-color: white;
+            border-radius: 1em;
+            border: 1px solid $Lightgray;
+
+            display: flex;
+
+            margin-top: 1em;
+            svg{
+                margin-right: 1em;
+            }
+            p{
+                font-family: 'Ubuntu-Bold';
+                font-size: 1em;
+                margin: 0;
+                color: $Marineblue;
+            }
+            .arcCost{
+                margin-top: .25em;
+                font-family: 'Ubuntu-Regular';
+                color: $Coolgray;
+            }
+            span{
+                color: $Marineblue;
+                font-family: 'Ubuntu-Regular';
+            }
+            @include desktop{
+                width: 135px;
+                height: 160px;
+                flex-direction: column;
+                div{
+                    height: 50%;
+                    padding-top: 3em;
+                }
+                p{
+                    display: block;
+                }
+                span{
+                    display: block;
+                }
+            }
+        }
+        .errorP{
+            width: 100%;
+            text-align: center;
+            margin-top: .75em;
+            height: 1em;
+            color: red;
+            font-size: .75em;
+            font-family: "Ubuntu-Medium";
+        }
+        .MoYe{
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .Monthly{
+                font-family: 'Ubuntu-Bold';
+                margin-right: 2em;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+            .Yearly{
+                font-family: 'Ubuntu-Bold';
+                margin-left: 2em;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+            .switch {
+                position: relative;
+                display: inline-block;
+                width: 40px;
+                height: 20px;
+            }
+            .switch input { 
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+            .slider {
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: $Marineblue;
+                -webkit-transition: .4s;
+                transition: .4s;
+                &:before{
+                    position: absolute;
+                    content: "";
+                    height: 14px;
+                    width: 14px;
+                    left: 4px;
+                    bottom: 3px;
+                    background-color: white;
+                    -webkit-transition: .4s;
+                    transition: .4s;
+                }
+            }
+            input:checked + .slider:before {
+                -webkit-transform: translateX(18px);
+                -ms-transform: translateX(18px);
+                transform: translateX(18px);
+            }
+            .slider.round {
+                border-radius: 34px;
+                &:before{
+                    border-radius: 50%;
+                }
+            }
+        }
+       
+    }
+    .Addon{
+        @include mobilePage;
+        height: 380px;
+        background-color: white;
+        @include desktop{
+            height: 375px;
+        }
+        .header{
+            font-family: 'Ubuntu-Bold';
+            font-size: 1.5em;
+            margin: 0;
+            margin-top: .5em;
+            color: $Marineblue;
+        }
+        p{
+            font-family: 'Ubuntu-Regular';
+            color: $Coolgray;
+            margin-top: .75em;
+            margin-bottom: 1em;
+        }
+        .OnlineService{
+            &:hover{
+                cursor: pointer;
+                border-color: $Purplishblue;
+            }
+            width: 100%;
+            height: 60px;
+            padding: 1em;
+            text-align: start;
+            background-color: white;
+            border-radius: 1em;
+            border: 1px solid $Lightgray;
+
+            display: flex;
+            @include desktop{
+                height: 80px;
+                padding: 1.4em;
+                font-size: 15px;
+                align-items: center;
+            }
+            margin-top: 2em;
+            div{
+                height: 100%;
+                justify-content: flex-start;
+            }
+            .check{
+                height: 24px;
+                width: 24px;
+                border: 1px solid $Lightgray;
+                border-radius: .5em;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-right: 1em;
+            }
+            .addT{
+                font-family: 'Ubuntu-Bold';
+                color: $Marineblue;
+                margin-bottom: .25em;
+            }
+            p{
+                font-family: 'Ubuntu-Regular';
+                font-size: 1em;
+                margin: 0;
+                color: $Coolgray;
+            }
+            .arcCost{
+                font-size: .75em;
+                margin-left: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                font-family: 'Ubuntu-Regular';
+                color: $Purplishblue;
+            }
+        }
+        .LargerStorage{
+            @include desktop{
+                height: 80px;
+                padding: 1.4em;
+                font-size: 15px;
+                align-items: center;
+            }
+            &:hover{
+                cursor: pointer;
+                border-color: $Purplishblue;
+            }
+            width: 100%;
+            height: 60px;
+            padding: 1em;
+            text-align: start;
+            background-color: white;
+            border-radius: 1em;
+            border: 1px solid $Lightgray;
+
+            display: flex;
+
+            margin-top: .75em;
+            div{
+                height: 100%;
+                justify-content: flex-start;
+            }
+            .check{
+                height: 24px;
+                width: 24px;
+                border: 1px solid $Lightgray;
+                border-radius: .5em;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-right: 1em;
+            }
+            .addT{
+                font-family: 'Ubuntu-Bold';
+                color: $Marineblue;
+                margin-bottom: .25em;
+            }
+            p{
+                font-family: 'Ubuntu-Regular';
+                font-size: 1em;
+                margin: 0;
+                color: $Coolgray;
+            }
+            .arcCost{
+                font-size: .75em;
+                margin-left: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                font-family: 'Ubuntu-Regular';
+                color: $Purplishblue;
+            }
+        }
+        .CustomizableProfile{
+            @include desktop{
+                height: 80px;
+                padding: 1.4em;
+                font-size: 15px;
+                align-items: center;
+            }
+            &:hover{
+                cursor: pointer;
+                border-color: $Purplishblue;
+            }
+            width: 100%;
+            height: 60px;
+            padding: 1em;
+            text-align: start;
+            background-color: white;
+            border-radius: 1em;
+            border: 1px solid $Lightgray;
+
+            display: flex;
+
+            margin-top: .75em;
+            div{
+                height: 100%;
+                justify-content: flex-start;
+            }
+            .check{
+                height: 24px;
+                width: 24px;
+                border: 1px solid $Lightgray;
+                border-radius: .5em;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: auto;
+                margin-bottom: auto;
+                margin-right: 1em;
+            }
+            .addT{
+                font-family: 'Ubuntu-Bold';
+                color: $Marineblue;
+                margin-bottom: .25em;
+            }
+            p{
+                font-family: 'Ubuntu-Regular';
+                font-size: 1em;
+                margin: 0;
+                color: $Coolgray;
+            }
+            .arcCost{
+                font-size: .75em;
+                margin-left: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                font-family: 'Ubuntu-Regular';
+                color: $Purplishblue;
+            }
+        }
+        
+       
+    }
+    .ThankYou{
+        @include mobilePage;
+        height: 400px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .ThankT{
+            font-family: 'Ubuntu-Bold';
+            font-size: 1.5em;
+            margin: 0;
+            margin-top: .5em;
+            color: $Marineblue;
+        }
+        p{
+            text-align: center;
+            font-family: 'Ubuntu-Regular';
+            color: $Coolgray;
+            margin-top: .75em;
+            margin-bottom: 1em;
+        }
+    }
+    .Finish{
+        @include mobilePage;
+        height: 365px;
+        @include desktop{
+            height: 375px;
+            .finalPlan{
+                margin-top: 3em;
+                font-size: 16px;
+            }
+            .addon{
+                font-size: 16px;
+            }
+            .totalT{
+                font-size: 16px;
+            }
+            padding-right: 1em;
+        }
+        .header{
+            font-family: 'Ubuntu-Bold';
+            font-size: 1.5em;
+            margin: 0;
+            margin-top: .5em;
+            color: $Marineblue;
+        }
+        p{
+            font-family: 'Ubuntu-Regular';
+            color: $Coolgray;
+            margin-top: .75em;
+            margin-bottom: 1em;
+        }
+        div{
+            width: 100%;
+        }
+        .finalPlan{
+            padding-left: 1em;
+            padding-right: 1em;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            .plan{
+                font-family: 'Ubuntu-Bold';
+                color: $Marineblue;
+                margin: 0;
+            }
+            .goToPlan{
+                margin: 0;
+                padding: 0;
+                background-color: white;
+                text-decoration: underline;
+                &:hover{
+                    cursor: pointer;
+                    outline: none;
+                    border: none;
+                }
+                border: none;
+                outline: none;
+                font-family: 'Ubuntu-Regular';
+            }
+            .planCost{ 
+                margin-left: auto;
+                margin-top: auto;
+                margin-bottom: auto;
+                font-family: 'Ubuntu-Bold';
+                color: $Marineblue;
+            }
+        }
+        hr{
+            margin-left: 1em;
+            margin-right: 1em;
+            border-color: white;
+        }
+        .addon{
+            padding-left: 1em;
+            padding-right: 1em;
+            span{ 
+                float: right;
+                font-size: 1em;
+                font-family: 'Ubuntu-Regular';
+                color: $Marineblue;
+            }
+        }
+        .totalT{
+            position: relative;
+            bottom: 0px;
+            padding-left: 1em;
+            padding-right: 1em;
+            span{ 
+                float: right;
+                font-size: 1em;
+                font-family: 'Ubuntu-Regular';
+                color: $Purplishblue;
+            }
+        }
+    }
+    .nextStep{   
+        position: absolute;
+        padding: 1em;
+        bottom: 0;
+        width: 375px;
+        height: 73px;
+        background-color: white;
+        @include desktop{
+            margin: 0;
+            position: relative;
+            width: 550px;
+            bottom: 670px;
+            left: 330px;
+        }
+        .back{
+            &:hover{
+                cursor: pointer;
+            }
+            float: left;
+            font-family: 'Ubuntu-Medium';
+            color: $Coolgray;
+            background-color: white;
+            height: 100%;
+            border: none;
+        }
+        .sub{
+            &:hover{
+                cursor: pointer;
+            }
+            float: right;
+            font-family: 'Ubuntu-Medium';
+            background-color: $Marineblue;
+            color: white;
+            height: 100%;
+            border: none;
+            border-radius: .25em;
+            width: 7em;
+        }
+    }
+
+}
